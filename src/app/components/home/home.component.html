@@ -1,1 +1,96 @@
-<p>home works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+
+    </div>
+
+    <div class="row searchBar">
+        <div class="bar">
+            <input class="searchbar" type="text" title="Search">
+            <!-- <ul>
+                <li>lsdkjf</li>
+                <li>lsdkjf</li>
+                <li>lsdkjf</li>
+                <li>lsdkjf</li>
+            </ul> -->
+        </div>
+    </div>
+
+    <!-- Latest Uploads -->
+    <div class="row">
+        <section id="latest" style="max-width:100%">
+            <h2 class="latest-heading harmattan">Latest Books</h2>
+
+            <!-- Slider -->
+            <ul id="light-slider" class="cs-hidden">
+                <li class="item-a" *ngFor="let book of latest_books">
+                    <div class="latest-box">
+                        <!-- IMG -->
+                        <div class="latest-b-img">
+                            <img src="http://books.google.com/books/content?id=8QFwvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="">
+                        </div>
+
+                        <!-- TXT -->
+                        <div class="latest-b-text">
+                            <strong>Rich Dad Poor Dad </strong>
+                            <p>Action</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </section>
+    </div>
+
+    <!-- Personal -->
+    <div class="row">
+        <section id="personal" style="max-width:100%">
+            <h2 class="latest-heading harmattan">Personal</h2>
+
+            <!-- Slider -->
+            <ul id="personal-slider" class="cs-hidden">
+                <li class="item-a" *ngFor="let book of latest_books">
+                    <div class="latest-box">
+                        <!-- IMG -->
+                        <div class="latest-b-img">
+                            <img src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" alt="">
+                        </div>
+
+                        <!-- TXT -->
+                        <div class="latest-b-text">
+                            <strong>Rich Dad Poor Dad </strong>
+                            <p>Action</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </section>
+    </div>
+    <!-- Business -->
+    <div class="row">
+        <section id="business" style="max-width:100%">
+            <h2 class="latest-heading harmattan">Business</h2>
+
+            <!-- Slider -->
+            <ul id="business-slider" class="cs-hidden">
+                <li class="item-a" *ngFor="let book of latest_books">
+                    <div class="latest-box">
+                        <!-- IMG -->
+                        <div class="latest-b-img">
+                            <img src="http://books.google.com/books/content?id=n-k6-ij0O8UC&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="">
+                        </div>
+
+                        <!-- TXT -->
+                        <div class="latest-b-text">
+                            <strong>Rich Dad Poor Dad </strong>
+                            <p>Action</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </section>
+    </div>
+</div>

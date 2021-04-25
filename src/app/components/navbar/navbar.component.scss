@@ -1,0 +1,12 @@
+.font-size {
+  font-size: 50px;
+}
+@media (min-with: 768px) {
+	.position-md-absolute {
+		position: absolute;
+	}
+	// .navbar-nav .nav-item:nth-child(#{$nth-nav-item-that-needs-margin-right}) {
+	// 	margin-right: $width-of-navbar-brand-or-logo-in-px + ($padding-x-for-navbar-brand-or-logo-in-px *
+	// 				2);
+	// }
+}
