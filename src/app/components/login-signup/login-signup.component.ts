@@ -10,16 +10,16 @@ export class LoginSignupComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const signUpButton:any= document.getElementById('signUp');
-    const signInButton:any= document.getElementById('signIn');
-    const container:any= document.getElementById('container');
+    const signUpButton: any = document.getElementById('signUp');
+    const signInButton: any = document.getElementById('signIn');
+    const container: any = document.getElementById('container');
 
     signUpButton.addEventListener('click', () => {
-      container.classList.add("right-panel-active");
+      container.classList.add('right-panel-active');
     });
 
     signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
+      container.classList.remove('right-panel-active');
     });
   }
 
