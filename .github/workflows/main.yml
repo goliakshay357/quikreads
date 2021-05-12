@@ -40,7 +40,11 @@ jobs:
 
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-        
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
         # Deploy to Netlify
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
