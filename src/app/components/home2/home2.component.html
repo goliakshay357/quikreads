@@ -12,88 +12,21 @@
 
     <!-------Latest Books-------->
     <div class="location" >
-      <br/>
       <h2 id="home" class="latest-heading harmattan">Latest Books</h2>
       <br/><br/>
       <div class="box">
-        <div >
+        <div *ngFor="let book of latest_books">
           <div class="cover">
-            <a href="">
+            <a routerLink='/book/{{book.isbn}}'>
               <img
-                src="http://books.google.com/books/content?id=8QFwvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+              src="{{book.image_URL}}"
                 alt=""/>
             </a>
           </div>
           <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=8QFwvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=8QFwvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=8QFwvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=8QFwvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=8QFwvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
+            <strong>{{book.book_title}}</strong>
+            <p>{{book.author_name[0]}}</p>
+            <div>{{book.book_category[0]}}</div>
           </div>
         </div>
       </div>
@@ -103,83 +36,17 @@
       <h2 id="home" class="latest-heading harmattan">Personal</h2>
       <br/><br/>
       <div class="box">
-        <div >
+        <div *ngFor="let book of personal_books">
           <div class="cover">
             <a href="">
               <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              src="{{book.image_URL}}"
                 alt=""/>
             </a>
           </div>
           <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div>
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
+            <strong>{{book.book_title}}</strong>
+            <p>{{book.author_name[0]}}</p>
           </div>
         </div>
       </div>
@@ -191,83 +58,17 @@
       <h2 id="home" class="latest-heading harmattan">Business</h2>
       <br/><br/>
       <div class="box">
-        <div >
+        <div *ngFor="let book of business_books">
           <div class="cover">
             <a href="">
               <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                src="{{book.image_URL}}"
                 alt=""/>
             </a>
           </div>
           <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div>
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
-          </div>
-        </div>
-        <div >
-          <div class="cover">
-            <a href="">
-              <img
-                src="http://books.google.com/books/content?id=_828x3WNBd8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-                alt=""/>
-            </a>
-          </div>
-          <div>
-            <strong>Rich Dad Poor Dad </strong>
-            <p>Action</p>
+            <strong>{{book.book_title}}</strong>
+            <p>{{book.author_name[0]}}</p>
           </div>
         </div>
       </div>

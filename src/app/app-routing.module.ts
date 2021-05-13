@@ -25,7 +25,7 @@ const routes: Routes = [
     component: GenreComponent,
   },
   {
-    path: 'book',
+    path: 'book/:isbn',
     component: BookDetailsComponent,
   },
   {
