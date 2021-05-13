@@ -19,8 +19,11 @@
 //**SECTION2**//
 
 .linksContainer{
-  display: grid;
-  grid-template-columns:  1fr 1fr 1fr;
+  max-width: 1000px;
+  position: relative;
+  padding: 5px;
+  background: #fff;
+  margin: 15px auto;
 }
 
 .quotesContainer{
@@ -43,9 +46,10 @@ footer{
 
 //**general**//
 iframe{
-  width: 350px;
+  width: 950px;
   padding: 10px;
-  height: 200px;
+  height: 650px;
+  align-self: center;
   border: solid transparent;
 }
 hr {
@@ -79,3 +83,63 @@ img{
   margin-top: 10px;
 }
 
+.slider {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.7rem;
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+iframe {
+  min-width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 0.7rem;
+}
+
+#previous, #next {
+  cursor: pointer;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: calc(50% - 25px);
+  left: -20px;
+  box-shadow: 0 12px 25px -9px grey;
+}
+
+#next {
+  left: unset;
+  right: -20px;
+}
+
+@media (max-width: 480px){
+  #previous, #next {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    top: calc(50% - 20px);
+  }
+}
+
+@media (min-width: 1200px){
+  #previous, #next {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    top: calc(50% - 30px);
+    left: -30px;
+  }
+
+  #next {
+    left: unset;
+    right: -30px;
+  }
+}

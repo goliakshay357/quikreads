@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <br/><br/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="container">
   <div class="section1">
     <div class="coverImage">
@@ -33,7 +34,7 @@
       <button>DOWNLOAD</button>
     </div>
     <div><!--empty--></div>
-    <div class="categories" >
+    <div class="categories">
       Categories:
       <h6 style="display: inline;margin-right: 3px; ">Fantasy</h6>
       <h6 style="display: inline ">Magic</h6>
@@ -43,16 +44,23 @@
   <div class="section2">
     Video Summary:
     <div class="linksContainer">
-      <iframe width="1832" height="812" src="https://www.youtube.com/embed/CzDjWbQQaVg" title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+      <span id="previous" class="material-icons md-24">arrow_left</span>
 
-      <iframe width="1832" height="812" src="https://www.youtube.com/embed/CzDjWbQQaVg" title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-      <iframe width="1832" height="812" src="https://www.youtube.com/embed/CzDjWbQQaVg" title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+      <span id="next" class="material-icons md-24">arrow_right</span>
+      <div id="slider" class="slider">
+
+        <iframe width="1832" height="812" src="https://www.youtube.com/embed/p7dqmROKGIo" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        <iframe width="1832" height="812" src="https://www.youtube.com/embed/_9bw_VtMUGA?list=RD_9bw_VtMUGA" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        <iframe width="1832" height="812" src="https://www.youtube.com/embed/CzDjWbQQaVg" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
     </div>
 
     Quotes:
@@ -63,8 +71,10 @@
       </div>
       <div class="quotes">
         "There will be no foolish wand-waving or silly incantations in this class. As such, I don't expect many of you
-        to appreciate the subtle science and exact art that is potion-making. However, for those select few who possess the
-        predisposition, I can teach you how to bewitch the mind and ensnare the senses. I can tell you how to bottle fame, brew
+        to appreciate the subtle science and exact art that is potion-making. However, for those select few who possess
+        the
+        predisposition, I can teach you how to bewitch the mind and ensnare the senses. I can tell you how to bottle
+        fame, brew
         glory, and even put a stopper in death.
         Then again, maybe some of you have come to Hogwarts in possession of abilities so formidable that you feel
         confident enough to not pay attention!"
