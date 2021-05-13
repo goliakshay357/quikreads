@@ -12,7 +12,7 @@
 
     <!-------Latest Books-------->
     <div class="location" >
-      <h2 id="home" class="latest-heading harmattan">Latest Books</h2>
+      <h2 id="home" class="latest-heading harmattan" routerLink='/genre/latest'>Latest Books</h2>
       <br/><br/>
       <div class="box">
         <div *ngFor="let book of latest_books">
@@ -33,12 +33,12 @@
     </div>
     <!--------Personal-------->
     <div class="location" >
-      <h2 id="home" class="latest-heading harmattan">Personal</h2>
+      <h2 id="home" class="latest-heading harmattan" routerLink='/genre/Personal'>Personal</h2>
       <br/><br/>
       <div class="box">
         <div *ngFor="let book of personal_books">
           <div class="cover">
-            <a href="">
+            <a routerLink='/book/{{book.isbn}}'>
               <img
               src="{{book.image_URL}}"
                 alt=""/>
@@ -55,12 +55,12 @@
     <!--------Business-------->
     <div class="location" >
       <br/>
-      <h2 id="home" class="latest-heading harmattan">Business</h2>
+      <h2 id="home" class="latest-heading harmattan" routerLink='/genre/Business'>Business</h2>
       <br/><br/>
       <div class="box">
         <div *ngFor="let book of business_books">
           <div class="cover">
-            <a href="">
+            <a routerLink='/book/{{book.isbn}}'>
               <img
                 src="{{book.image_URL}}"
                 alt=""/>

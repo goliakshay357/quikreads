@@ -21,7 +21,7 @@ const routes: Routes = [
     component: LoginSignupComponent,
   },
   {
-    path: 'genre',
+    path: 'genre/:genre',
     component: GenreComponent,
   },
   {
