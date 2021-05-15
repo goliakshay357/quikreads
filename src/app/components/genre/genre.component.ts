@@ -17,7 +17,7 @@ export class GenreComponent implements OnInit {
   activateID:any;
   genre_books:any;
   latestBoolean: boolean = false;
-
+ 
   ngOnInit(): void {
     if(this.activateID.genre === "latest"){
       this.latestBoolean = true
@@ -27,7 +27,7 @@ export class GenreComponent implements OnInit {
     }
   }
   async getLatestGenre(){
-    const response = this._rest_api.latestBooks(50);
+    const response = this._rest_api.latestBooks(60);
     const data = await response;
     this.genre_books = data.content;
     console.log(this.genre_books);

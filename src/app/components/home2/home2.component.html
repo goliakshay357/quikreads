@@ -7,6 +7,9 @@
     <div class="row searchBar">
       <div class="bar">
         <input class="searchbar" type="text" title="Search">
+        <ul>
+          <li *ngFor="let book of bookSearch">{{book.book_title}}</li>
+        </ul>
       </div>
     </div>
 
