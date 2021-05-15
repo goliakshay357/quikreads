@@ -4,6 +4,7 @@ import { Home2Component } from './components/home2/home2.component';
 import {LoginSignupComponent} from './components/login-signup/login-signup.component';
 import {GenreComponent} from './components/genre/genre.component';
 import {BookDetailsComponent} from './components/book-details/book-details.component';
+import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'book/:isbn',
     component: BookDetailsComponent,
+  },
+  {
+    path: 'bookmarks',
+    component: BookmarksComponent,
   },
   {
     path: '**',

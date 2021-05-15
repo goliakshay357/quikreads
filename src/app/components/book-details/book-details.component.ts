@@ -66,10 +66,10 @@ export class BookDetailsComponent implements OnInit {
     const buyButton = document.getElementById('buy');
     // -------------------------------------------------------------------------
     // If local storage is null
-    if(!localStorage.getItem("lastname")){
+    if(!localStorage.getItem("bookmarks")){
       let data:any = []
       let temp = JSON.stringify(data)
-      localStorage.setItem("lastname", temp)
+      localStorage.setItem("bookmarks", temp)
     }
 
     // -----------------------------------------------------------------------
@@ -146,7 +146,7 @@ export class BookDetailsComponent implements OnInit {
 
       let existsBoolean = this.LocalDBExists(this.bookDetails.isbn);
       if(existsBoolean){
-        let bookmarks:any = localStorage.getItem("lastname")
+        let bookmarks:any = localStorage.getItem("bookmarks")
         let data = JSON.parse(bookmarks)
         let match = this.bookDetails.isbn
         
@@ -155,7 +155,7 @@ export class BookDetailsComponent implements OnInit {
         }), 1);
         
         // Store the localstorage back
-        localStorage.setItem("lastname", JSON.stringify(data)) 
+        localStorage.setItem("bookmarks", JSON.stringify(data)) 
     }
     }else{
       $(".bookmark").toggleClass("bookmarked")
@@ -166,12 +166,12 @@ export class BookDetailsComponent implements OnInit {
 
       let existsBoolean = this.LocalDBExists(this.bookDetails.isbn);
       if(!existsBoolean){
-        let bookmarks:any = localStorage.getItem("lastname")
+        let bookmarks:any = localStorage.getItem("bookmarks")
         let data = JSON.parse(bookmarks)
         data.push(this.bookDetails)
         
         // Store the localstorage back
-        localStorage.setItem("lastname", JSON.stringify(data)) 
+        localStorage.setItem("bookmarks", JSON.stringify(data)) 
       }
       
     }
@@ -182,8 +182,8 @@ export class BookDetailsComponent implements OnInit {
   LocalDBExists(isbn:any): any{
     console.log("checking", isbn)
     // If local is not empty
-    if(localStorage.getItem("lastname")){
-      let local:any = localStorage.getItem("lastname")
+    if(localStorage.getItem("bookmarks")){
+      let local:any = localStorage.getItem("bookmarks")
       let bookmarks = JSON.parse(local);
       for(let i=0;i< bookmarks.length;i++){
         if(isbn === bookmarks[i].isbn){

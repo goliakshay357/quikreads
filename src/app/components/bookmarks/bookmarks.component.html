@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div>
+
+
+  <section class="container">
+    <!-- <div class="row searchBar">
+      <div class="bar">
+        <input class="searchbar" type="text" title="Search">
+      </div>
+    </div> -->
+
+
+    <div class="location" >
+      <br/>
+      <h2 id="home" class="latest-heading harmattan">My Bookmarks 💗</h2>
+      <br/><br/>
+      <div class="box">
+        <!-- genre_books -->
+        <div *ngFor="let book of bookmarks">
+          <div class="cover">
+            <a routerLink='/book/{{book.isbn}}'>
+              <img
+              src="{{book.image_URL}}"
+                alt=""/>
+            </a>
+          </div>
+          <div>
+            <strong>{{book.book_title}}</strong>
+            <p>{{book.author_name[0]}}</p>
+            <div>{{book.book_category[0]}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <footer>
+      <p>&copy 2021 QuikRead, Inc.</p>
+      <p>Goli is the best 2021</p>
+    </footer>
+  </section>
+
+
+</div>
