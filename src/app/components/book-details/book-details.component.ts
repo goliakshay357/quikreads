@@ -17,6 +17,7 @@ export class BookDetailsComponent implements OnInit {
     console.log(this.activateID.isbn)
   }
 
+  
   ngOnInit(): void {
     // ------------------------------------------------------------------------
     const nextEl = document.getElementById('next');
