@@ -8,13 +8,23 @@ import { RestApiService } from 'src/app/services/rest-api.service';
   styleUrls: ['./book-details.component.scss']
 })
 export class BookDetailsComponent implements OnInit {
-  
-  activateID:any;
-  book_details:any;
-  
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private _rest_api: RestApiService) { 
+
+  activateID: any;
+  bookDetails: any;
+
+  convertVideoLink = () => {
+    const VID_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    console.log(this.bookDetails);
+    for ( let i = 0; i < this.bookDetails.youtube_links.length; i++) {
+      let url = this.bookDetails.youtube_links[i];
+      url = url.match(VID_REGEX)[1];
+      this.bookDetails.youtube_links[i] = 'https://www.youtube.com/embed/' + url;
+      console.log(this.bookDetails.youtube_links[i]);
+    }
+  }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private _rest_api: RestApiService) {
     this.activatedRoute.params.subscribe(params => this.activateID = params);
-    console.log(this.activateID.isbn)
+    console.log(this.activateID.isbn);
   }
 
   
@@ -44,13 +54,29 @@ export class BookDetailsComponent implements OnInit {
     }
 
     // -------------------------------------------------------------------------
-    this.gettingBookDataISBN()
+    this.gettingBookDataISBN();
+
+    // -------------------------------------------------------------------------
+    const downloadButton = document.getElementById('download');
+    const buyButton = document.getElementById('buy');
+
+    const onDownload = () => {
+      window.open(this.bookDetails.download_links[0]);
+    };
+    const onBuy = () => {
+      window.open(this.bookDetails.amazon_purchase);
+    };
+    downloadButton.addEventListener('click', onDownload);
+    buyButton.addEventListener('click',onBuy);
+
+    // -----------------------------
   }
 
   async gettingBookDataISBN(){
-    const response = this._rest_api.getBookByISBN(this.activateID.isbn)
+    const response = this._rest_api.getBookByISBN(this.activateID.isbn);
     const data = await response;
-    this.book_details = data.content[0];
-    console.log(this.book_details)
+    this.bookDetails = data.content[0];
+    console.log(this.bookDetails);
+    this.convertVideoLink();
   }
 }
