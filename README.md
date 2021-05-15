@@ -2,15 +2,18 @@
 
 # Quikreads Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+Reading books is amazing but the time that goes for reading a book is heavy and consuming. It’s always amazing to audit a book or if the summary of the book is known quicker. 
+
+
+Quickbit helps in getting your favourite and suggested books in one platform interactively by summarizing the book in the form of videos, text, flashcards and much more. Books are suggested based on your interest and Quickbit helps you in summarizing the book in various formats which takes max 15 minutes to understand a book. 
+
 
 ## Development server
 
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -24,6 +27,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Angular documentation
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
