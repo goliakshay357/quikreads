@@ -7,6 +7,17 @@ Reading books is amazing but the time that goes for reading a book is heavy and 
 
 Quickbit helps in getting your favourite and suggested books in one platform interactively by summarizing the book in the form of videos, text, flashcards and much more. Books are suggested based on your interest and Quickbit helps you in summarizing the book in various formats which takes max 15 minutes to understand a book. 
 
+*Important Links:*
+
+[Live Demo](https://quikreads.netlify.app/)
+
+[Books Data Entry](https://goliakshay357.github.io/quikread-admin/)
+
+[Books Data Entry Repository](https://github.com/goliakshay357/quikread-admin)
+
+[Quikreads Admin Panel](https://github.com/goliakshay357/quikreads-admin-frontend)
+
+[Quikreads Backend](https://github.com/goliakshay357/quikread-backend)
 
 ## Development server
 
