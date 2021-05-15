@@ -59,18 +59,16 @@ export class BookDetailsComponent implements OnInit {
     // -------------------------------------------------------------------------
     const downloadButton = document.getElementById('download');
     const buyButton = document.getElementById('buy');
-
-    const onDownload = () => {
-      window.open(this.bookDetails.download_links[0]);
-    };
-    const onBuy = () => {
-      window.open(this.bookDetails.amazon_purchase);
-    };
-    downloadButton.addEventListener('click', onDownload);
-    buyButton.addEventListener('click',onBuy);
-
     // -----------------------------
   }
+
+  onDownload = () => {
+    window.open(this.bookDetails.download_links[0]);
+  };
+  
+  onBuy = () => {
+    window.open(this.bookDetails.amazon_purchase);
+  };
 
   async gettingBookDataISBN(){
     const response = this._rest_api.getBookByISBN(this.activateID.isbn);
