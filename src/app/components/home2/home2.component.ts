@@ -36,7 +36,7 @@ export class Home2Component implements OnInit {
   }
 
   async latestBooksData() {
-    const response = this._rest_api.latestBooks();
+    const response = this._rest_api.latestBooks(12);
     const data = await response;
     this.latest_books = data.content;
     console.log(this.latest_books);

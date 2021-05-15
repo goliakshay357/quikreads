@@ -23,11 +23,12 @@ export class RestApiService {
     return this.categorySpecific_response;
   }
   
-  async latestBooks(){
-    await this.http.get(`https://mission360.ddns.net/api/v1/latest-books`).toPromise()
+  async latestBooks(parameter:any){
+    await this.http.get(`https://mission360.ddns.net/api/v1/latest-books/${parameter}`).toPromise()
       .then((response) => {
         this.latestBooks_response = response;
       });
+      console.log(this.latestBooks_response,"latest")
     return this.latestBooks_response;
   }
 

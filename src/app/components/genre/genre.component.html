@@ -34,6 +34,7 @@
           <div>
             <strong>{{book.book_title}}</strong>
             <p>{{book.author_name[0]}}</p>
+            <div *ngIf="latestBoolean">{{book.book_category[0]}}</div>
           </div>
         </div>
       </div>
