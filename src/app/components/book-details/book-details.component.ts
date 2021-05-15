@@ -13,6 +13,7 @@ export class BookDetailsComponent implements OnInit {
   bookDetails: any;
   youtubeLinks:any = [];
   bookQuotes: any;
+  bookmarked:any = false;
   
   convertVideoLink = () => {
     const VID_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
@@ -63,7 +64,15 @@ export class BookDetailsComponent implements OnInit {
     // -------------------------------------------------------------------------
     const downloadButton = document.getElementById('download');
     const buyButton = document.getElementById('buy');
-    // -----------------------------
+    // -------------------------------------------------------------------------
+    // If local storage is null
+    if(!localStorage.getItem("lastname")){
+      let data:any = []
+      let temp = JSON.stringify(data)
+      localStorage.setItem("lastname", temp)
+    }
+
+    // -----------------------------------------------------------------------
   }
 
   onDownload = () => {
@@ -77,7 +86,7 @@ export class BookDetailsComponent implements OnInit {
   async gettingBookDataISBN(){
     const response = this._rest_api.getBookByISBN(this.activateID.isbn);
     const data = await response;
-    this.bookDetails = data.content[0];
+    this.bookDetails = await data.content[0];
     await this.convertVideoLink();
     this.youtubeEmbed(this.bookDetails.youtube_links)
     this.bookQuotes = this.bookDetails.book_quote
@@ -86,6 +95,21 @@ export class BookDetailsComponent implements OnInit {
       console.log(this.bookDetails.podcast_mp3[0])
       let data:any = document.getElementById('spotify')
       // data.src = this.bookDetails.podcast_mp3[0]
+    }
+
+
+    // For bookmark checking in local
+    let existsBoolean = this.LocalDBExists(this.bookDetails.isbn);
+    if(existsBoolean){
+      console.log("bookmark exists init");
+      
+      $(".cont").toggleClass("cont_alter")
+      $(".label").toggleClass("hide_label")
+      $(".label2").toggleClass("hide_label")
+      this.bookmarked = true; 
+    }else {
+      console.log( "!bookmark exists init");
+      this.bookmarked = false
     }
   }
 
@@ -109,5 +133,67 @@ export class BookDetailsComponent implements OnInit {
     $("#copyURL").val(window.location.href).select();
     document.execCommand("copy");
     $("#copyURL").remove();   
+  }
+
+  bookmarkClick(){
+    if(this.bookmarked == true){
+      this.bookmarked = false
+      $(".bookmark").toggleClass("bookmarked")
+      $(".cont").toggleClass("cont_alter")
+      $(".label").toggleClass("hide_label")
+      $(".label2").toggleClass("hide_label")
+
+
+      let existsBoolean = this.LocalDBExists(this.bookDetails.isbn);
+      if(existsBoolean){
+        let bookmarks:any = localStorage.getItem("lastname")
+        let data = JSON.parse(bookmarks)
+        let match = this.bookDetails.isbn
+        
+        data.splice(data.findIndex(function(i:any){
+          return i.isbn === match;
+        }), 1);
+        
+        // Store the localstorage back
+        localStorage.setItem("lastname", JSON.stringify(data)) 
+    }
+    }else{
+      $(".bookmark").toggleClass("bookmarked")
+      $(".cont").toggleClass("cont_alter")
+      $(".label").toggleClass("hide_label")
+      $(".label2").toggleClass("hide_label") 
+      this.bookmarked = true
+
+      let existsBoolean = this.LocalDBExists(this.bookDetails.isbn);
+      if(!existsBoolean){
+        let bookmarks:any = localStorage.getItem("lastname")
+        let data = JSON.parse(bookmarks)
+        data.push(this.bookDetails)
+        
+        // Store the localstorage back
+        localStorage.setItem("lastname", JSON.stringify(data)) 
+      }
+      
+    }
+    let existsBoolean = this.LocalDBExists(this.bookDetails.isbn);
+    console.log(existsBoolean)
+  }
+
+  LocalDBExists(isbn:any): any{
+    console.log("checking", isbn)
+    // If local is not empty
+    if(localStorage.getItem("lastname")){
+      let local:any = localStorage.getItem("lastname")
+      let bookmarks = JSON.parse(local);
+      for(let i=0;i< bookmarks.length;i++){
+        if(isbn === bookmarks[i].isbn){
+          console.log("book exists")
+          return true
+        }
+      }
+        return false
+    }else{
+      return false;
+    }
   }
 }

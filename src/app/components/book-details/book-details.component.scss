@@ -258,3 +258,52 @@ $dash-length-letters: 600;
   transition: fill-opacity 0.3s ease;
 }
 }
+
+
+.bookmark123 {
+  .cont {
+    width: 192px;
+    height: 192px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.02);
+  }
+  .cont:hover {
+    box-shadow: 0px 32px 64px 0px rgba(0,0,0,0.12);
+    cursor: pointer;
+  }
+  .cont .label,
+  .cont .label2 {
+    position: absolute;
+    width: auto;
+    margin-top: 54px;
+    font-size: 24px;
+    color: rgba(51,51,51,0.3);
+    font-weight: 300;
+    font-family: "SF Pro Display", sans-serif;
+  }
+  .cont .label2 {
+    color: rgba(255,255,255,0.3);
+  }
+  .cont_alter {
+    background: #333 !important;
+  }
+  .bookmark {
+    margin-top: -16px;
+    position: absolute;
+  }
+  .hide_label {
+    opacity: 0;
+  }
+  .bookmarked path {
+    d: path("M 0 4.00673C 0 0.811944 3.56058 -1.09362 6.2188 0.678524L 21.7812 11.0535C 23.1248 11.9492 24.8752 11.9492 26.2188 11.0535L 41.7812 0.678525C 44.4394 -1.09362 48 0.811944 48 4.00673L 48 56.5327C 48 58.7418 46.2091 60.5327 44 60.5327L 24 60.5327C 24 60.5327 24 60.5327 24 60.5327L 4 60.5327C 1.79086 60.5327 0 58.7418 0 56.5327L 0 4.00673Z");
+    fill: #fff;
+  }
+  * {
+    -webkit-transition: 0.6s ease-in-out;
+  }
+  
+}
