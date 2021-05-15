@@ -1,3 +1,5 @@
+![Alt Text](https://github.com/goliakshay357/quikreads/blob/master/src/assets/cover.gif?raw=true)
+
 # Quikreads Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
