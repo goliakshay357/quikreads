@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RestApiService} from 'src/app/services/rest-api.service';
+import Fuse from 'fuse.js'
 
 @Component({
   selector: 'app-home2',
@@ -8,6 +9,7 @@ import {RestApiService} from 'src/app/services/rest-api.service';
 })
 export class Home2Component implements OnInit {
 
+
   constructor(private _rest_api: RestApiService) {
   }
 
@@ -15,7 +17,9 @@ export class Home2Component implements OnInit {
   business_books: any;
   personal_books: any;
   latest_books: any;
-  
+  fuse:any;
+  bookSearchFuse: any;
+
   ngOnInit(): void {
     this.latestBooksData();
     this.gettingBusinessData();
@@ -72,5 +76,34 @@ export class Home2Component implements OnInit {
         "book_title": "Netropic"
       }
     ]
+
+
+    // ------------------------------------------------------------
+    // Fuse JS COnfig
+    const options = {
+      // isCaseSensitive: false,
+      // includeScore: false,
+      // shouldSort: true,
+      // includeMatches: false,
+      // findAllMatches: false,
+      // minMatchCharLength: 1,
+      // location: 0,
+      // threshold: 0.6,
+      // distance: 100,
+      // useExtendedSearch: false,
+      // ignoreLocation: false,
+      // ignoreFieldNorm: false,
+      keys: [
+        "book_title",
+      ]
+    };
+    this.fuse = await new Fuse(this.bookSearch, options);
+  }
+
+  textInputChange(parameter:any){
+    console.log(parameter);
+    this.bookSearchFuse =  this.fuse.search(parameter.value)
+    console.log(this.bookSearchFuse);
+    
   }
 }
