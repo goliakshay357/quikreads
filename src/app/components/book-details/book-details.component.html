@@ -19,7 +19,7 @@
       <h6><strong class="roboto" >Get a copy:</strong></h6>
       <button class="btn btn-outline-warning m-2" (click)="onBuy()">Amazon Buy</button>
       <button class="btn btn-outline-dark m-2" (click)="onDownload()">Download</button>
-      <button class="btn btn-outline-danger">Share Link</button>
+      <button class="btn btn-outline-danger" (click)="shareLink()">Share Link</button>
     </div>
     <div><!--empty--></div>
     <div class="categories" >
@@ -39,8 +39,12 @@
       </div>
     </div>
   </div>
+  <div class="row spotify" *ngIf="bookDetails.podcast_mp3[0]">
+    <!-- <p class="mt-2 roboto mb-4"><strong>Podcast</strong></p> -->
+    <embed class="mx-auto mt-2" id="spotify" width="91%" height="200" src="https://open.spotify.com/embed-podcast/show/1BiL8ElHJeVfaprIM8OkNY" type="">
+  </div>
   <div class="row" style="display: block;">
-    <p class="mt-4 roboto mb-4"><strong>Famours lines from the book</strong></p>
+    <p class="mt-2 roboto mb-4"><strong>Famours lines from the book</strong></p>
       <div class="mb-4 cursive" *ngFor="let quote of bookQuotes">
         {{quote}}
       </div>

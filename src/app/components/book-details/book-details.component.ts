@@ -81,6 +81,12 @@ export class BookDetailsComponent implements OnInit {
     await this.convertVideoLink();
     this.youtubeEmbed(this.bookDetails.youtube_links)
     this.bookQuotes = this.bookDetails.book_quote
+
+    if(this.bookDetails.podcast_mp3[0]){
+      console.log(this.bookDetails.podcast_mp3[0])
+      let data:any = document.getElementById('spotify')
+      // data.src = this.bookDetails.podcast_mp3[0]
+    }
   }
 
   data=(link:any)=> `<iframe width="100%" height="500" src="${link}" title="YouTube video player"
@@ -94,5 +100,14 @@ export class BookDetailsComponent implements OnInit {
       // console.log(parameter[i],"dd")
       $(`#slider`).append(this.data(parameter[i]))
     }
+  }
+
+  shareLink(){
+    console.log("copy");
+    
+    $("body").append('<input id="copyURL" type="text" value="" />');
+    $("#copyURL").val(window.location.href).select();
+    document.execCommand("copy");
+    $("#copyURL").remove();   
   }
 }
