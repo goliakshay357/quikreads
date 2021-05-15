@@ -7,8 +7,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class RestApiService {
 
 
+
   constructor(private http: HttpClient,) { 
   }
+  getSearchFeed_response: any;
   categorySpecific_response:any;
   latestBooks_response:any;
   getBooksByISBN_response: any;
@@ -32,6 +34,14 @@ export class RestApiService {
     return this.latestBooks_response;
   }
 
+  async getSearchFeed(){
+    await this.http.get(`https://mission360.ddns.net/api/v1/search-feed`).toPromise()
+      .then((response) => {
+        this.getSearchFeed_response = response;
+      });
+    return this.getSearchFeed_response;
+  }
+  
   // --------------------- BOOKS ---------------------------------------------
   async getBookByISBN(parameter:any){
     await this.http.get(`https://mission360.ddns.net/api/v1/books/get-by-isbn/${parameter}`).toPromise()
