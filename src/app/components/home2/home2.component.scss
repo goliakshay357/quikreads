@@ -27,6 +27,17 @@
     padding-left: 30px;
     border-radius: 30px;
   }
+
+  ul {
+    list-style: none;
+    padding-left: 20px;
+    // margin-left: 0px;
+  }
+  li {
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+  }
 }
 
 img {

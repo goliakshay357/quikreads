@@ -8,7 +8,7 @@
       <div class="bar">
         <input class="searchbar" type="text" title="Search" (input)="textInputChange($event.target)">
         <ul style="margin-bottom: 0px;">
-          <li *ngFor="let book of bookSearchFuse">{{book.item.book_title}}</li>
+          <li *ngFor="let book of bookSearchFuse" routerLink='/book/{{book.item.isbn}}'>{{book.item.book_title}}</li>
         </ul>
       </div>
     </div>
