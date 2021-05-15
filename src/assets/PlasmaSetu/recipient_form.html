@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="google-signin-client_id"
+        content="157355526477-sh1clhhkttctd2hh8du8m9dcpv1o9smk.apps.googleusercontent.com">
+    <title>PlasmaSetu | Request Plasma</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favvicon.png" rel="icon">
+    
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+
+</head>
+
+<body>
+
+
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <a href="index.html" class="logo mr-auto"><img src="assets/img/favvicon.png" alt="" />PlasmaSetu</a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <h1 class="logo mr-auto"><a href="index.html">Medicio</a></h1> -->
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about_plasma.html">About Plasma Donation</a></li>
+                    <li><a href="about_covid.html">About COVID-19</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <div class="vl" style="display:none;margin-left:20px;border-left: 1px solid #bdc3c7;
+                    height: 30px;
+                  "></div>
+                    <div>
+                        <img id="avatar" alt="Avatar" class="avatar1" style="display:none;margin-left:20px;vertical-align: middle !important;
+                     width: 35px !important;
+                     height: 35px !important;
+                     border-radius: 50% !important;">
+
+                    </div>
+                    <li class="drop-down" style="padding-left: 10px  !important;display: none;" id='drop'><a href="">
+                            <span id='username' style="font-size:14px;vertical-align: middle;"></span></a>
+                        <ul>
+                            <li>
+                                <div id="gSignIn" style="display: none;"></div><a href="#" style="padding-bottom: 0px;"
+                                    id="signOutbtn">Sign out</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </nav>
+
+
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs Section ======= -->
+        <section class="breadcrumbs" style="visibility: hidden;">
+            <div class="container">
+
+                <div class="alignCenter">
+                    <h2>About COVID-19</h2>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Breadcrumbs Section -->
+
+        <section id="appointment" class="appointment" style="padding-top: 0px;">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Plasma Request Form</h2>
+                </div>
+
+                <form action="https://egeglfbop4.execute-api.us-east-1.amazonaws.com/insert_into_recepient"
+                    method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+                    <div class="form-row">
+                        <div class="col-md-4 form-group">
+                            <input type="text" name="rname" class="form-control" id="rname" placeholder="Your Name"
+                                data-rule="minlen:4" data-msg="Full name must be least 4 chars">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="email" class="form-control" name="remail" id="remail" placeholder="Your Email"
+                                data-rule="email" data-msg="Email ID is invalid">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="tel" class="form-control" name="rphone" id="rphone" placeholder="Your Phone"
+                                data-rule="equals:10" data-msg="Mobile number must contain 10 digits"
+                                onkeypress='validate(event)'>
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 form-group">
+                            <input type="text" name="rage" class="form-control" id="rage" placeholder="Recipient Age"
+                                data-rule="age:18" data-msg="Age must be greater than 18" onkeypress='validate(event)'>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <select name="rBlood" id="rBlood" class="form-control" data-rule="minlen:1"
+                                data-msg="Please enter a valid option">
+                                <option value="" disabled selected>Recipient Blood Group</option>
+                                <option value="A+">A +ve</option>
+                                <option value="A-">A -ve</option>
+                                <option value="O+">O +ve</option>
+                                <option value="O-">O -ve</option>
+                                <option value="B+">B +ve</option>
+                                <option value="B-">B -ve</option>
+                                <option value="AB+">AB +ve</option>
+                                <option value="AB-">AB -ve</option>
+                            </select>
+                            <div class="validate validateSelB" style="display: none;"></div>
+                        </div>
+
+                        <div class="col-md-4 form-group">
+                            <select name="rcity" id="rcity" class="form-control" data-rule="minlen:1"
+                                data-msg="Please enter a valid option"></select>
+                            <div class="validate validateSelC"></div>
+
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0px;">
+                        <div class="col-md-6 form-group">
+                            <label class="control-label">Gender</label>
+                            <label class="containerRadio">Male
+                                <input type="radio" name="rgender" value="male" data-rule="checked"
+                                    data-msg="Gender is mandatory">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="containerRadio">Female
+                                <input type="radio" name="rgender" value="female" data-rule="checked"
+                                    data-msg="Gender is mandatory">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="containerRadio">Other
+                                <input type="radio" name="rgender" value="other" data-rule="checked"
+                                    data-msg="Gender is mandatory">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <div class="validate validateCheck"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+                        <div class="col-md-4 form-group">
+                            <select name="relation" id="relation" class="form-control">
+                                <option value="" disabled selected>Your Relation with Plasma Recipient</option>
+                                <option value="self">For Self</option>
+                                <option value="father">Father</option>
+                                <option value="mother">Mother</option>
+                                <option value="wife">Wife</option>
+                                <option value="brother">Brother</option>
+                                <option value="sister">Sister</option>
+                                <option value="child">Child</option>
+                                <option value=other>Other</option>
+                            </select>
+                            <div class="validate validateSelR" style="display: none;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="containerCheckBox">I agree to the <a
+                                style="color: dodgerblue;text-decoration: underline;"
+                                href="terms_and_conditions.html">terms and conditions</a> and would like to request
+                            a donor.
+                            <input type="checkbox" name="condition">
+                            <span class="checkmark1"></span>
+                        </label>
+                        <div class="validate"></div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your request has been sent successfully. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit" id="request">Request</button></div>
+
+                </form>
+
+            </div>
+        </section>
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>PlasmaSetu</span></strong>. All Rights Reserved <br><a
+                  href="terms_and_conditions.html">Terms and conditions </a>|<a
+                  href="privacy_policy.html"> Privacy Policy</a>
+              </div>
+            <div class="credits">
+
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script>
+
+        function renderButton() {
+            gapi.signin2.render('gSignIn', {
+                'scope': 'profile email',
+                'width': 240,
+                'height': 50,
+                'longtitle': true,
+                'theme': 'dark'
+            });
+        }
+        var username = sessionStorage.getItem('userName');
+        var picture = sessionStorage.getItem('picture');
+        var phone = sessionStorage.getItem('phone');
+        var email = sessionStorage.getItem('email');
+
+
+        if (sessionStorage.getItem('type') && sessionStorage.getItem('type').length && sessionStorage.getItem('type') === 'G') {
+            if (picture && picture.length) {
+                $('#avatar').css('display', 'inline-block');
+                $('#avatar').attr('src', picture);
+            }
+            if (username && username.length && email && email.length) {
+
+                $('#drop').css('display', 'inline-block');
+                $('.vl').css('display', 'inline-block');
+
+                $('#username').text(username);
+                $('#rname').val(username);
+                $('#remail').val(email);
+            }
+        }
+        else if (sessionStorage.getItem('type') && sessionStorage.getItem('type').length && sessionStorage.getItem('type') === 'N') {
+            $('#avatar').css('display', 'inline');
+            $('#avatar').attr('src', "https://gravatar.com/avatar/744748595b4d21c613305d870d00fec7?s=400&d=mp&r=x");
+            if (phone && phone.length && email && email.length) {
+
+                $('#drop').css('display', 'inline-block');
+                $('.vl').css('display', 'inline-block');
+                $('#username').text('user');
+                $('#remail').val(email);
+                $('#rphone').val(phone);
+            }
+        }
+
+        // Sign out the user
+        function signOut() {
+      if (sessionStorage.getItem('type') && sessionStorage.getItem('type').length && sessionStorage.getItem('type') === 'N') {
+        sessionStorage.removeItem('phone');
+        sessionStorage.removeItem('email');
+        sessionStorage.removeItem('type');
+        window.location.href = 'signup.html';
+      }
+      else if (sessionStorage.getItem('type') && sessionStorage.getItem('type').length && sessionStorage.getItem('type') === 'G') {
+        {
+          var auth2 = gapi.auth2.getAuthInstance();
+          auth2.signOut().then(function () {
+            sessionStorage.removeItem('userName');
+            sessionStorage.removeItem('picture');
+            $('.vl').css('display', 'none');
+            $('#avatar').css('display', 'none');
+
+            $('#drop').css('display', 'none');
+          });
+
+
+          auth2.disconnect();
+          window.location.href = 'signup.html';
+        }
+      }
+
+    }
+        $('#signOutbtn').click(function () {
+            signOut()
+        });
+        function validate(evt) {
+            var theEvent = evt || window.event;
+
+            // Handle paste
+            if (theEvent.type === 'paste') {
+                key = event.clipboardData.getData('text/plain');
+            } else {
+                // Handle key press
+                var key = theEvent.keyCode || theEvent.which;
+                key = String.fromCharCode(key);
+            }
+            var regex = /[0-9]|\./;
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

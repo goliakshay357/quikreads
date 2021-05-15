@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicons -->
+    <link href="assets/img/favvicon.png" rel="icon">
+    
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Template Main CSS File -->
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: "Roboto", sans-serif;
+            margin: 0px;
+        }
+
+        .login-form h1 {
+            font-size: 36px;
+            text-align: center;
+            color: #E03A3C;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .login-form .social-icon {
+            width: 100%;
+            font-size: 20px;
+            padding-top: 20px;
+            color: #fff;
+            text-align: center;
+            float: left;
+        }
+
+        .login-form {
+            background: #fff;
+            width: 450px;
+            border-radius: 6px;
+            margin: 0 auto;
+            display: table;
+            padding: 15px 30px 30px;
+            box-sizing: border-box;
+            margin-top: 40px;
+        }
+
+        .form-group {
+            float: left;
+            width: 100%;
+            margin: 0 0 15px;
+            position: relative;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 5px;
+            height: 56px;
+            border-radius: 74px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 15px;
+            padding-left: 75px;
+        }
+
+        .login-form .form-group .input-icon {
+            font-size: 15px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            border-radius: 25px;
+            bottom: 0;
+            height: 100%;
+            padding-left: 35px;
+            color: #666;
+        }
+
+        .breadcrumbs1 {
+            padding: 20px 20px;
+            background-color: #f8eeee;
+            min-height: 10px;
+        }
+        .reset-psw1 {
+            float: left;
+            width: 100%;
+            text-decoration: none;
+            color: #E03A3C;
+            font-size: 14px;
+            text-align: center;
+
+        }
+        @media (max-width: 992px) {
+            .breadcrumbs1 {
+                margin-top: 70px;
+            }
+        }
+
+        .breadcrumbs1 h2 {
+            font-size: 24px;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        @media (max-width: 992px) {
+            .breadcrumbs1 h2 {
+                margin: 0 0 10px 0;
+            }
+        }
+
+        .breadcrumbs1 ol {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .breadcrumbs1 ol li+li {
+            padding-left: 10px;
+        }
+
+        .breadcrumbs1 ol li+li::before {
+            display: inline-block;
+            padding-right: 10px;
+            color: #6c757d;
+            content: "/";
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumbs1 .d-flex {
+                display: block !important;
+            }
+
+            .breadcrumbs1 ol {
+                display: block;
+            }
+
+            .breadcrumbs1 ol li {
+                display: inline-block;
+            }
+        }
+
+        .login-form .login-btn {
+            background: #E03A3C;
+            padding: 11px 50px;
+            border-color: #E03A3C;
+            color: #fff;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 20px;
+            border: 1px solid #E03A3C;
+            border-radius: 44px;
+            width: 100%;
+            height: 56px;
+            cursor: pointer;
+        }
+
+        .login-form .reset-psw {
+            float: left;
+            width: 100%;
+            text-decoration: none;
+            color: #E03A3C;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 11px;
+        }
+
+        .login-form .social-icon button {
+            font-size: 20px;
+            color: white;
+            height: 50px;
+            width: 50px;
+            background: #E03A3C;
+            border-radius: 60%;
+            margin: 0px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            opacity: 0.9;
+        }
+
+        .login-form .seperator {
+            float: left;
+            width: 100%;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            margin: 50px 0 0;
+        }
+
+        .validate {
+            font-size: 12px;
+            color: #E03A3C;
+            margin-left: 10px;
+            padding-top: 3px;
+        }
+
+        .login-form .seperator b {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+            background: #fff;
+            display: inline-block;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            position: relative;
+            top: -22px;
+            z-index: 1;
+        }
+
+        .login-form p {
+            float: left;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            margin: 0 0 10px;
+        }
+
+        @media screen and (max-width:767px) {
+            .login-form {
+                width: 90%;
+                padding: 15px 15px 30px;
+            }
+        }
+        
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            /* border: 1px solid #888; */
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #fff;
+            color: gainsboro;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+            margin-top: 20px;
+            margin-top: 20px;
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #fff;
+            color: #343a40;
+        }
+        .linked:link,
+        .linked:visited {
+            background-color: #E03A3C;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .linked:hover,
+        .linked:active {
+            background-color: #E03A3C;
+        }
+    </style>
+</head>
+
+<body>
+     <!-- ======= Breadcrumbs Section ======= -->
+     <section class="breadcrumbs1">
+
+        <div class="container">
+
+
+                </div> 
+            <ol style="text-align: end;">
+                <li><a class="reset-psw1" href="index.html">Home</a></li>
+                <li>Log in</li>
+            </ol>
+        </div>
+    </section>
+    <div class="login-form" style="  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);">
+        <form action="https://i7gkw1yrwl.execute-api.us-east-1.amazonaws.com/recepient_login" method="post" role="form"
+            class="php-email-form">
+            <h1>Log in</h1>
+            <div class="form-group">
+                <input type="email" placeholder="E-mail Address" name="remail" id="remail" data-rule="email"
+                    data-msg="Email ID should be valid">
+                <div class="validate"></div>
+                <span class="input-icon"><i class="fa fa-envelope"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Mobile number" name="rphone" id="rphone" data-rule="equals:10"
+                    data-msg="Mobile number should have 10 digits" onkeypress='validate(event)'>
+                <div class="validate"></div>
+                <span class="input-icon"><i class="fa fa-mobile" style="font-size: 24px;"></i></span>
+            </div>
+            <button class="login-btn">Log in</button>
+            <a class="reset-psw" href="signup.html">New User? Sign up</a>
+        </form>
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+            <span class="close">&times;</span>
+        </div> -->
+            <div class="modal-body">
+                <p>Oops, looks like you are not registered with us. Please sign up to proceed.</p>
+
+            </div>
+            <div class="modal-footer">
+
+                <a href="" class="linked" target="_self">Ok</a>
+
+            </div>
+            <br>
+        </div>
+
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script>
+
+        function validate(evt) {
+            var theEvent = evt || window.event;
+
+            // Handle paste
+            if (theEvent.type === 'paste') {
+                key = event.clipboardData.getData('text/plain');
+            } else {
+                // Handle key press
+                var key = theEvent.keyCode || theEvent.which;
+                key = String.fromCharCode(key);
+            }
+            var regex = /[0-9]|\./;
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
+    </script>
+    <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/php-email-form/login.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

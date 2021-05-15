@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Data, Router, ActivatedRoute, NavigationStart, NavigationExtras } from '@angular/router';
 import { RestApiService } from 'src/app/services/rest-api.service';
-
+declare var $: any;
 @Component({
   selector: 'app-book-details',
   templateUrl: './book-details.component.html',
@@ -11,7 +11,9 @@ export class BookDetailsComponent implements OnInit {
 
   activateID: any;
   bookDetails: any;
-
+  youtubeLinks:any = [];
+  bookQuotes: any;
+  
   convertVideoLink = () => {
     const VID_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     console.log(this.bookDetails);
@@ -22,6 +24,7 @@ export class BookDetailsComponent implements OnInit {
       console.log(this.bookDetails.youtube_links[i]);
     }
   }
+  
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private _rest_api: RestApiService) {
     this.activatedRoute.params.subscribe(params => this.activateID = params);
     console.log(this.activateID.isbn);
@@ -33,6 +36,7 @@ export class BookDetailsComponent implements OnInit {
     const nextEl = document.getElementById('next');
     const previousEl = document.getElementById('previous');
     const sliderEl = document.getElementById('slider');
+  
     // @ts-ignore
     nextEl.addEventListener('click', onNextClick);
     // @ts-ignore
@@ -74,7 +78,21 @@ export class BookDetailsComponent implements OnInit {
     const response = this._rest_api.getBookByISBN(this.activateID.isbn);
     const data = await response;
     this.bookDetails = data.content[0];
-    console.log(this.bookDetails);
-    this.convertVideoLink();
+    await this.convertVideoLink();
+    this.youtubeEmbed(this.bookDetails.youtube_links)
+    this.bookQuotes = this.bookDetails.book_quote
+  }
+
+  data=(link:any)=> `<iframe width="100%" height="500" src="${link}" title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen></iframe>`
+
+  youtubeEmbed(parameter:any){
+    let length = parameter.length
+    for(let i=0; i<length; i++){
+      // console.log(parameter[i],"dd")
+      $(`#slider`).append(this.data(parameter[i]))
+    }
   }
 }
