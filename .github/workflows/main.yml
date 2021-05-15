@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name : Checkout
@@ -59,7 +59,7 @@ jobs:
         
   #Lighthouse
   lighthouse:
-    needs: build
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
