@@ -10,7 +10,7 @@ declare var $: any;
 export class BookDetailsComponent implements OnInit {
 
   activateID: any;
-  bookDetails: any;
+  public bookDetails: any;
   youtubeLinks: any = [];
   bookQuotes: any;
   bookmarked: any = false;
