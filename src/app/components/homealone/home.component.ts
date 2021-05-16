@@ -18,15 +18,15 @@ export class HomeComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    const data: any = $('#light-slider, #personal-slider, #business-slider');
-    data.lightSlider({
-      autoWidth: true,
-      loop: true,
-      // tslint:disable-next-line:typedef
-      onSliderLoad() {
-        $('#light-slider, #personal-slider, #business-slider').removeClass('cs-hidden');
-      }
-    });
+    // const data: any = $('#light-slider, #personal-slider, #business-slider');
+    // data.lightSlider({
+    //   autoWidth: true,
+    //   loop: true,
+    //   // tslint:disable-next-line:typedef
+    //   onSliderLoad() {
+    //     $('#light-slider, #personal-slider, #business-slider').removeClass('cs-hidden');
+    //   }
+    // });
   }
 
 }

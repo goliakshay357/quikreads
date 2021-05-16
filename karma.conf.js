@@ -12,6 +12,10 @@ module.exports = function (config) {
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
+    files: [
+      'https://code.jquery.com/jquery-1.11.2.min.js'
+    ],
+
     client: {
       jasmine: {
         // you can add configuration options for Jasmine here

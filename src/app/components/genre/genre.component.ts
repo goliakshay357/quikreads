@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Data, Router, ActivatedRoute, NavigationStart, NavigationExtras } from '@angular/router';
-import { RestApiService } from 'src/app/services/rest-api.service';
+import {Component, OnInit} from '@angular/core';
+import {Data, Router, ActivatedRoute, NavigationStart, NavigationExtras} from '@angular/router';
+import {RestApiService} from 'src/app/services/rest-api.service';
 
 @Component({
   selector: 'app-genre',
@@ -9,33 +9,37 @@ import { RestApiService } from 'src/app/services/rest-api.service';
 })
 export class GenreComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private _rest_api: RestApiService) { 
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private _rest_api: RestApiService) {
     this.activatedRoute.params.subscribe(params => this.activateID = params);
-    console.log(this.activateID.genre)
+    console.log(this.activateID.genre);
   }
 
-  activateID:any;
-  genre_books:any;
-  latestBoolean: boolean = false;
- 
+  activateID: any;
+  genreBooks: any;
+  latestBoolean = false;
+
   ngOnInit(): void {
-    if(this.activateID.genre === "latest"){
-      this.latestBoolean = true
-      this.getLatestGenre()
-    }else{
+    if (this.activateID.genre === 'latest') {
+      this.latestBoolean = true;
+      this.getLatestGenre();
+    } else {
       this.gettingGenreData();
     }
   }
-  async getLatestGenre(){
+
+  // tslint:disable-next-line:typedef
+  async getLatestGenre() {
     const response = this._rest_api.latestBooks(60);
     const data = await response;
-    this.genre_books = data.content;
-    console.log(this.genre_books);
+    this.genreBooks = data.content;
+    console.log(this.genreBooks);
   }
-  async gettingGenreData(){
-    const response = this._rest_api.getGenreBooks(this.activateID.genre)
+
+  // tslint:disable-next-line:typedef
+  async gettingGenreData() {
+    const response = this._rest_api.getGenreBooks(this.activateID.genre);
     const data = await response;
-    this.genre_books = data.content;
-    console.log(this.genre_books)
+    this.genreBooks = data.content;
+    console.log(this.genreBooks);
   }
-} 
+}

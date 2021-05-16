@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RestApiService} from 'src/app/services/rest-api.service';
-import Fuse from 'fuse.js'
+import Fuse from 'fuse.js';
 
 @Component({
   selector: 'app-home2',
@@ -10,10 +10,11 @@ import Fuse from 'fuse.js'
 export class Home2Component implements OnInit {
 
 
+  // tslint:disable-next-line:variable-name
   constructor(private _rest_api: RestApiService) {
   }
 
-  bookSearch:any = [];
+  bookSearch: any = [];
   business_books: any;
   personal_books: any;
   latest_books: any;
@@ -27,6 +28,7 @@ export class Home2Component implements OnInit {
     this.fillBookSearch();
   }
 
+  // tslint:disable-next-line:typedef
   async gettingBusinessData() {
     const response = this._rest_api.categorySpecificLimit('business');
     const data = await response;
@@ -34,6 +36,7 @@ export class Home2Component implements OnInit {
     console.log(this.business_books);
   }
 
+  // tslint:disable-next-line:typedef
   async gettingPersonalData() {
     const response = this._rest_api.categorySpecificLimit('personal');
     const data = await response;
@@ -41,6 +44,7 @@ export class Home2Component implements OnInit {
     console.log(this.business_books);
   }
 
+  // tslint:disable-next-line:typedef
   async latestBooksData() {
     const response = this._rest_api.latestBooks(12);
     const data = await response;
@@ -48,10 +52,11 @@ export class Home2Component implements OnInit {
     console.log(this.latest_books);
   }
 
+  // tslint:disable-next-line:typedef
   async fillBookSearch() {
     const response = this._rest_api.getSearchFeed()
     const data = await response;
-    this.bookSearch = data.content
+    this.bookSearch = data.content;
     // ------------------------------------------------------------
     // Fuse JS COnfig
     const options = {
@@ -68,16 +73,16 @@ export class Home2Component implements OnInit {
       // ignoreLocation: false,
       // ignoreFieldNorm: false,
       keys: [
-        "book_title",
+        'book_title',
       ]
     };
     this.fuse = await new Fuse(this.bookSearch, options);
   }
 
+  // tslint:disable-next-line:typedef
   textInputChange(parameter:any){
     console.log(parameter);
-    this.bookSearchFuse =  this.fuse.search(parameter.value)
+    this.bookSearchFuse =  this.fuse.search(parameter.value);
     console.log(this.bookSearchFuse);
-    
   }
 }
