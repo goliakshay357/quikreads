@@ -21,8 +21,8 @@ jobs:
          node-version: '12.18'
       - run: npm ci
       - run: npm run build --prod
-      # - run: npm test    
-      
+      - run:  npm run test-headless
+          
       - name: Login to Docker
         uses: docker/login-action@v1
         with:
