@@ -58,9 +58,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
         
-  #Lighthouse
   lighthouse:
-    needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -68,8 +66,8 @@ jobs:
         uses: treosh/lighthouse-ci-action@v7
         with:
           urls: |
-            https://quikreads.netlify.app/
-            https://goliakshay357.github.io/quikread-admin/
+            https://example.com/
+            https://example.com/blog
           budgetPath: ./budget.json # test performance budgets
           uploadArtifacts: true # save results as an action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
