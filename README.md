@@ -11,11 +11,11 @@ Quickbit helps in getting your favourite and suggested books in one platform int
 
 <!-- [Live Demo](https://quikreads.netlify.app/) -->
 
-[Books Data Entry](https://goliakshay357.github.io/quikread-admin/)
+<!-- [Books Data Entry](https://goliakshay357.github.io/quikread-admin/) -->
 
 [Books Data Entry Repository](https://github.com/goliakshay357/quikread-admin)
 
-[Quikreads Admin Panel](https://github.com/goliakshay357/quikreads-admin-frontend)
+<!-- [Quikreads Admin Panel](https://github.com/goliakshay357/quikreads-admin-frontend) -->
 
 [Quikreads Backend](https://github.com/goliakshay357/quikread-backend)
 
