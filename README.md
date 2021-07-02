@@ -9,7 +9,7 @@ Quickbit helps in getting your favourite and suggested books in one platform int
 
 *Important Links:*
 
-[Live Demo](https://quikreads.netlify.app/)
+<!-- [Live Demo](https://quikreads.netlify.app/) -->
 
 [Books Data Entry](https://goliakshay357.github.io/quikread-admin/)
 
